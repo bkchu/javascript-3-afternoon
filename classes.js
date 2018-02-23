@@ -105,16 +105,36 @@ class ProgressiveManager extends Manager {
   hire(Employee) {
     super.hire(Employee);
     let length = this.reports.length;
-    if (length >= 1 && length <= 3) {
-      this.title = "Barely Manager";
-    } else if (length >= 4 && length <= 10) {
-      this.title = "Mostly Manager";
-    } else if (length >= 11 && length <= 50) {
-      this.title = "Manager";
-    } else if (length >= 51 && length <= 100) {
-      this.title = "Manager Plus";
-    } else if (length >= 101) {
-      this.title = "Bestest Manager";
+    // if (length >= 1 && length <= 3) {
+    //   this.title = "Barely Manager";
+    // } else if (length >= 4 && length <= 10) {
+    //   this.title = "Mostly Manager";
+    // } else if (length >= 11 && length <= 50) {
+    //   this.title = "Manager";
+    // } else if (length >= 51 && length <= 100) {
+    //   this.title = "Manager Plus";
+    // } else if (length >= 101) {
+    //   this.title = "Bestest Manager";
+    // }
+
+    switch (true) {
+      case length >= 1 && length <= 3:
+        this.title = "Barely Manager";
+        break;
+      case length >= 4 && length <= 10:
+        this.title = "Mostly Manager";
+        break;
+      case length >= 11 && length <= 50:
+        this.title = "Manager";
+        break;
+      case length >= 51 && length <= 100:
+        this.title = "Manager Plus";
+        break;
+      case length >= 101:
+        this.title = "Bestest Manager";
+        break;
+      default:
+        this.title = "Not a manager";
     }
   }
 
